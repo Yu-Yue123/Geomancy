@@ -1,0 +1,52 @@
+.geomancy-root {
+  background-color: #f7f8fa;
+  color: #1f2933;
+}
+
+.panel {
+  background-color: #ffffff;
+  border-color: #d6dde3;
+  border-width: 1px;
+  border-radius: 8px;
+}
+
+.eyebrow,
+.guide-formula,
+.summary-kicker,
+.detail-row-title {
+  color: #9a6b2f;
+}
+
+.app-title,
+.summary-title,
+.question-title,
+.placeholder-title,
+.note-title {
+  color: #111827;
+}
+
+.field-label,
+.summary-copy,
+.question-meta,
+.note-copy,
+.detail-copy {
+  color: #6b7280;
+}
+
+.segmented.active,
+.tab.active,
+.primary-button,
+.detail-topbar {
+  background-color: #2f8f83;
+  color: #fff8e9;
+}
+
+.secondary-button,
+.icon-button,
+.guide-copy,
+.note-block,
+.summary-card,
+.detail-row,
+.detail-glyph {
+  background-color: #eef2f5;
+}

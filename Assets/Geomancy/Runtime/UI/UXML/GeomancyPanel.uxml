@@ -1,0 +1,123 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <Style src="../USS/geomancy-theme.uss" />
+  <Style src="../USS/geomancy-layout.uss" />
+
+  <ui:VisualElement name="geomancy-root" class="geomancy-root">
+    <ui:VisualElement name="topbar" class="topbar">
+      <ui:VisualElement class="title-block">
+        <ui:Label text="European Geomancy" class="eyebrow" />
+        <ui:Label text="地占起卦" class="app-title" />
+      </ui:VisualElement>
+      <ui:Button name="theme-toggle" text="◐" class="icon-button" />
+    </ui:VisualElement>
+
+    <ui:VisualElement name="workspace" class="workspace">
+      <ui:VisualElement name="control-panel" class="panel control-panel">
+        <ui:VisualElement class="question-guide">
+          <ui:Label text="问题类型" class="field-label" />
+          <ui:VisualElement class="segmented-row three">
+            <ui:Button name="mode-yesno" text="是否" class="segmented active" />
+            <ui:Button name="mode-development" text="发展" class="segmented" />
+            <ui:Button name="mode-custom" text="自定义" class="segmented" />
+          </ui:VisualElement>
+          <ui:VisualElement name="guide-copy" class="guide-copy">
+            <ui:Label text="是否问题" class="guide-title" />
+            <ui:Label text="谁 + 是否/能否/会不会 + 时间 + 具体事件" class="guide-formula" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:Label text="所问之事" class="field-label" />
+        <ui:TextField name="question-input" multiline="true" class="question-input" />
+
+        <ui:VisualElement class="segmented-row two">
+          <ui:Button name="cast-random" text="随机起卦" class="segmented active" />
+          <ui:Button name="cast-manual" text="手动四母" class="segmented" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="manual-mothers" class="manual-grid hidden" />
+
+        <ui:VisualElement class="actions">
+          <ui:Button name="cast-button" text="起卦" class="primary-button" />
+          <ui:Button name="copy-button" text="复制" class="secondary-button" />
+          <ui:Button name="clear-button" text="清空" class="secondary-button" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="settings">
+          <ui:Toggle name="include-sentence" text="显示调停者" value="true" class="setting-toggle" />
+          <ui:Label text="入宫排法" class="field-label" />
+          <ui:DropdownField name="house-method" class="house-method" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="summary-card">
+          <ui:Label text="判官" class="summary-kicker" />
+          <ui:Label name="judge-name" text="等待起卦" class="summary-title" />
+          <ui:Label name="judge-text" text="起卦后会显示判官、左右见证和入宫图。" class="summary-copy" />
+        </ui:VisualElement>
+      </ui:VisualElement>
+
+      <ui:VisualElement name="reading-area" class="panel reading-area">
+        <ui:VisualElement class="tabs">
+          <ui:Button name="tab-shield" text="盾形图" class="tab active" />
+          <ui:Button name="tab-house" text="入宫图" class="tab" />
+          <ui:Button name="tab-notes" text="解读" class="tab" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="shield-view" class="view active">
+          <ui:VisualElement class="question-strip">
+            <ui:Label text="未填写问题" class="question-title" />
+            <ui:Label text="盾形图视图占位" class="question-meta" />
+          </ui:VisualElement>
+          <ui:VisualElement class="shield-placeholder">
+            <ui:Label text="Shield Chart" class="placeholder-title" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="house-view" class="view hidden">
+          <ui:VisualElement class="question-strip">
+            <ui:Label text="未填写问题" class="question-title" />
+            <ui:Label text="入宫图视图占位" class="question-meta" />
+          </ui:VisualElement>
+          <ui:VisualElement class="house-placeholder">
+            <ui:Label text="House Chart" class="placeholder-title" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="notes-view" class="view hidden">
+          <ui:VisualElement class="note-layout">
+            <ui:VisualElement class="note-block">
+              <ui:Label text="核心判断" class="note-title" />
+              <ui:Label text="解读内容占位。" class="note-copy" />
+            </ui:VisualElement>
+            <ui:VisualElement class="note-block">
+              <ui:Label text="调停者" class="note-title" />
+              <ui:Label text="调停者内容占位。" class="note-copy" />
+            </ui:VisualElement>
+          </ui:VisualElement>
+        </ui:VisualElement>
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <ui:VisualElement name="detail-panel" class="detail-panel hidden">
+      <ui:VisualElement class="detail-topbar">
+        <ui:Button name="detail-close" text="×" class="detail-icon" />
+        <ui:VisualElement class="detail-heading">
+          <ui:Label text="含义" class="detail-title" />
+          <ui:Label text="" class="detail-subtitle" />
+        </ui:VisualElement>
+        <ui:Button name="detail-hide-system" text="隐藏" class="detail-hide-button" />
+      </ui:VisualElement>
+      <ui:VisualElement class="detail-body">
+        <ui:VisualElement class="detail-glyph" />
+        <ui:VisualElement class="detail-row">
+          <ui:Label text="宫位含义" class="detail-row-title" />
+          <ui:Label text="" class="detail-copy" />
+        </ui:VisualElement>
+        <ui:VisualElement class="detail-row">
+          <ui:Label text="卦象含义" class="detail-row-title" />
+          <ui:Label text="" class="detail-copy" />
+        </ui:VisualElement>
+        <ui:TextField name="custom-meaning" label="自定义含义" multiline="true" class="custom-meaning" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>
